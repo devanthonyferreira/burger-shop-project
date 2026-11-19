@@ -57,6 +57,10 @@ button:hover {
     opacity: 0.8;
 }
 
+.button-visibility {
+    visibility: hidden;
+}
+
 .menu {
     list-style: none;
     display: grid;

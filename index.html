@@ -11,15 +11,18 @@
 <body>
 
     <div class="button-container">
-        <button onclick="showMenu()">Ver Menu</button>
-        <button>Aplicar Desconto</button>
-        <button>Carrinho</button>
-        <button>Filtro</button>
+
+        <button onclick="showMenu(menuArray)">Ver Menu</button>
+        <button class="button-visibility" onclick="applyDiscount()">Aplicar Desconto</button>
+        <button class="button-visibility">Carrinho</button>
+        <button class="button-visibility">Filtro</button>
+
     </div>
 
     <ul class="menu"></ul>
 
 </body>
+
 <script src="data.js"></script>
 <script src="script.js"></script>
 
