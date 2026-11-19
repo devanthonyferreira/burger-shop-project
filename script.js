@@ -42,6 +42,13 @@ const cartSum = () => {
         const sumPrice = acc + option.price
         return sumPrice
     }, 0)
-    
+
     sum.innerHTML = `A soma dos itens é: R$ ${sumTotal}`
+}
+
+const filterVegan = () => {
+
+    const veganFilter = menuArray.filter(option => option.vegan)
+    
+    showMenu(veganFilter)
 }
