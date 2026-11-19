@@ -1,4 +1,5 @@
 const menuArray = menuOptions;
+const sum = document.querySelector('.sum')
 const menuList = document.querySelector('.menu')
 const buttonVisibility = document.querySelectorAll('.button-visibility')
 
@@ -31,6 +32,16 @@ const applyDiscount = () => {
 
         return discountedOption
     })
-    
+
     showMenu(newMenu)
+}
+
+const cartSum = () => {
+
+    const sumTotal = menuArray.reduce((acc, option) => {
+        const sumPrice = acc + option.price
+        return sumPrice
+    }, 0)
+    
+    sum.innerHTML = `A soma dos itens é: R$ ${sumTotal}`
 }

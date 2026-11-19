@@ -89,3 +89,16 @@ p {
 .price {
     color: #00ff2a;
 }
+
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sum {
+
+    color: rgb(255, 196, 2);
+    font-size: 25px;
+    font-weight: bold;
+}
