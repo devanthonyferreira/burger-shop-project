@@ -3,15 +3,10 @@ const menuList = document.querySelector('.menu')
 const cartModal = document.querySelector('#cart-modal')
 const cartEmpty = document.querySelector('.cart-empty')
 const cartContent = document.querySelector('.cart-content')
-const buttonVisibility = document.querySelectorAll('.button-visibility')
 
 let cart = []
 
 const showMenu = (list) => {
-
-    buttonVisibility.forEach(button => {
-        button.style.visibility = "visible"
-    })
 
     menuList.innerHTML = ""
 
@@ -45,20 +40,6 @@ const renderCart = () => {
     openModal(cartModal)
 }
 
-const applyDiscount = () => {
+// Init
 
-    const newMenu = menuArray.map(option => {
-        const discountedOption = { ...option, price: option.price * 0.9 }
-
-        return discountedOption
-    })
-
-    showMenu(newMenu)
-}
-
-const filterVegan = () => {
-
-    const veganFilter = menuArray.filter(option => option.vegan)
-
-    showMenu(veganFilter)
-}
+showMenu(menuArray)
