@@ -10,26 +10,65 @@
 
 <body>
 
-    <div class="button-container">
 
-        <button onclick="showMenu(menuArray)">Ver Menu</button>
-        <button class="button-visibility" onclick="applyDiscount()">Aplicar Desconto</button>
-        <button class="button-visibility" onclick="cartSum()">Carrinho</button>
-        <button class="button-visibility" onclick="filterVegan()">Filtro</button>
+    <main>
 
-    </div>
 
-    <div class="menu-container">
+        <div class="button-container">
+            <button onclick="showMenu(menuArray)">Ver Menu</button>
+            <button class="button-visibility" onclick="applyDiscount()">Aplicar Desconto</button>
+            <button class="button-visibility" onclick="filterVegan()">Filtro</button>
+        </div>
 
-        <ul class="menu"></ul>
-        
-        <p class="sum"></p>
-        
-    </div>
+
+        <div class="menu-container">
+            <ul class="menu"></ul>
+        </div>
+
+
+        <dialog id="cart-modal">
+
+
+            <div class="cart-header">
+                <h2 class="cart-title">Carrinho</h2>
+
+
+                <button class="close-cart" aria-label="Fechar carrinho" onclick="closeModal(cartModal)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        aria-hidden="true">
+                        <path d="M18 6 6 18" />
+                        <path d="m6 6 12 12" />
+                    </svg>
+                </button>
+            </div>
+
+
+            <div class="cart-content"></div>
+
+
+        </dialog>
+
+
+        <button class="open-cart" aria-label="Abrir carrinho" onclick="openModal(cartModal)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true">
+                <path d="m2.05 2.05 1.099-.028a1 1 0 0 1 1.008.815l2.69 14.347A1 1 0 0 0 7.83 18H18" />
+                <path d="M4.563 5h16.435a1 1 0 0 1 .981 1.204l-1.026 6.226A2 2 0 0 1 18.962 14H6.25" />
+                <circle cx="18" cy="20" r="2" />
+                <circle cx="8" cy="20" r="2" />
+            </svg>
+        </button>
+
+
+    </main>
+
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+
 
 </body>
-
-<script src="data.js"></script>
-<script src="script.js"></script>
 
 </html>

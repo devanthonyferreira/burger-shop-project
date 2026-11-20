@@ -1,5 +1,5 @@
 const menuArray = menuOptions;
-const sum = document.querySelector('.sum')
+const cartModal = document.querySelector('#cart-modal')
 const menuList = document.querySelector('.menu')
 const buttonVisibility = document.querySelectorAll('.button-visibility')
 
@@ -36,19 +36,17 @@ const applyDiscount = () => {
     showMenu(newMenu)
 }
 
-const cartSum = () => {
-
-    const sumTotal = menuArray.reduce((acc, option) => {
-        const sumPrice = acc + option.price
-        return sumPrice
-    }, 0)
-
-    sum.innerHTML = `A soma dos itens é: R$ ${sumTotal}`
-}
-
 const filterVegan = () => {
 
     const veganFilter = menuArray.filter(option => option.vegan)
-    
+
     showMenu(veganFilter)
+}
+
+const openModal = (modal) => {
+    modal.showModal()
+}
+
+const closeModal = (modal) => {
+    modal.close()
 }
