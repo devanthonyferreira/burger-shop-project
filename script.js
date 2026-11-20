@@ -1,9 +1,11 @@
 const menuArray = menuOptions;
-const cartModal = document.querySelector('#cart-modal')
 const menuList = document.querySelector('.menu')
+const cartModal = document.querySelector('#cart-modal')
+const cartEmpty = document.querySelector('.cart-empty')
+const cartContent = document.querySelector('.cart-content')
 const buttonVisibility = document.querySelectorAll('.button-visibility')
 
-
+let cart = []
 
 const showMenu = (list) => {
 
@@ -25,6 +27,24 @@ const showMenu = (list) => {
     })
 };
 
+const openModal = (modal) => {
+    modal.showModal()
+}
+
+const closeModal = (modal) => {
+    modal.close()
+}
+
+const renderCart = () => {
+    if (cart.length === 0) {
+        cartEmpty.classList.remove('hidden')
+    } else {
+        cartEmpty.classList.add('hidden')
+    }
+
+    openModal(cartModal)
+}
+
 const applyDiscount = () => {
 
     const newMenu = menuArray.map(option => {
@@ -41,12 +61,4 @@ const filterVegan = () => {
     const veganFilter = menuArray.filter(option => option.vegan)
 
     showMenu(veganFilter)
-}
-
-const openModal = (modal) => {
-    modal.showModal()
-}
-
-const closeModal = (modal) => {
-    modal.close()
 }
