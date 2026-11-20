@@ -15,10 +15,10 @@ const showMenu = (list) => {
 
     list.forEach(option => {
         const listItem =
-            `<li>
-                <img src="${option.src}" alt="${option.name}">
-                <p>${option.name}</p>
-                <p class="price">R$ <span>${option.price}</span></p>
+            `<li class="menu-item">
+                <img class="menu-item-image" src="${option.src}" alt="${option.name}">
+                <p class="menu-item-name">${option.name}</p>
+                <p class="menu-item-price">R$ ${option.price}</p>
             </li>`;
 
         menuList.innerHTML += listItem

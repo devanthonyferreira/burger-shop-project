@@ -10,30 +10,22 @@
 
 <body>
 
-
     <main>
 
-
         <div class="button-container">
-            <button onclick="showMenu(menuArray)">Ver Menu</button>
-            <button class="button-visibility" onclick="applyDiscount()">Aplicar Desconto</button>
-            <button class="button-visibility" onclick="filterVegan()">Filtro</button>
+            <button class="button-primary" onclick="showMenu(menuArray)">Ver Menu</button>
+            <button class="button-primary button-visibility" onclick="applyDiscount()">Aplicar Desconto</button>
+            <button class="button-primary button-visibility" onclick="filterVegan()">Filtro</button>
         </div>
 
-
-        <div class="menu-container">
-            <ul class="menu"></ul>
-        </div>
-
+        <ul class="menu"></ul>
 
         <dialog id="cart-modal">
-
 
             <div class="cart-header">
                 <h2 class="cart-title">Carrinho</h2>
 
-
-                <button class="close-cart" aria-label="Fechar carrinho" onclick="closeModal(cartModal)">
+                <button class="button-primary close-cart" aria-label="Fechar carrinho" onclick="closeModal(cartModal)">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         aria-hidden="true">
@@ -43,14 +35,11 @@
                 </button>
             </div>
 
-
             <div class="cart-content"></div>
-
 
         </dialog>
 
-
-        <button class="open-cart" aria-label="Abrir carrinho" onclick="openModal(cartModal)">
+        <button class="button-primary open-cart" aria-label="Abrir carrinho" onclick="openModal(cartModal)">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                 aria-hidden="true">
@@ -61,13 +50,10 @@
             </svg>
         </button>
 
-
     </main>
-
 
     <script src="data.js"></script>
     <script src="script.js"></script>
-
 
 </body>
 
