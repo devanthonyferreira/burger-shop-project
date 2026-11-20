@@ -1,26 +1,29 @@
-const menuArray = menuOptions;
+// DOM Elements
+
 const menuList = document.querySelector('.menu')
 const cartModal = document.querySelector('#cart-modal')
 const cartEmpty = document.querySelector('.cart-empty')
 const cartContent = document.querySelector('.cart-content')
 
+// State
+
 let cart = []
 
+// Menu
+
 const showMenu = (list) => {
+    const menuItems = list.map(option => {
+        return `<li class="menu-item">
+                    <img class="menu-item-image" src="${option.src}" alt="${option.name}">
+                    <p class="menu-item-name">${option.name}</p>
+                    <p class="menu-item-price">R$ ${option.price}</p>
+                </li>`
+    }).join('')
 
-    menuList.innerHTML = ""
+    menuList.innerHTML = menuItems
+}
 
-    list.forEach(option => {
-        const listItem =
-            `<li class="menu-item">
-                <img class="menu-item-image" src="${option.src}" alt="${option.name}">
-                <p class="menu-item-name">${option.name}</p>
-                <p class="menu-item-price">R$ ${option.price}</p>
-            </li>`;
-
-        menuList.innerHTML += listItem
-    })
-};
+// Modal
 
 const openModal = (modal) => {
     modal.showModal()
@@ -29,6 +32,8 @@ const openModal = (modal) => {
 const closeModal = (modal) => {
     modal.close()
 }
+
+// Cart
 
 const renderCart = () => {
     if (cart.length === 0) {
@@ -42,4 +47,4 @@ const renderCart = () => {
 
 // Init
 
-showMenu(menuArray)
+showMenu(menuOptions)
