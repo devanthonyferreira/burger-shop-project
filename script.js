@@ -17,6 +17,7 @@ const showMenu = (list) => {
                     <img class="menu-item-image" src="${option.src}" alt="${option.name}">
                     <p class="menu-item-name">${option.name}</p>
                     <p class="menu-item-price">R$ ${option.price}</p>
+                    <button class="button-primary" onclick="addToCart(${option.id})">Adicionar ao carrinho</button>
                 </li>`
     }).join('')
 
@@ -43,6 +44,11 @@ const renderCart = () => {
     }
 
     openModal(cartModal)
+}
+
+const addToCart = (id) => {
+    const selectedItem = menuOptions.find(option => option.id === id)
+    cart.push(selectedItem)
 }
 
 // Init
