@@ -3,7 +3,7 @@
 const menuList = document.querySelector('.menu')
 const cartModal = document.querySelector('#cart-modal')
 const cartEmpty = document.querySelector('.cart-empty')
-const cartContent = document.querySelector('.cart-content')
+const cartList = document.querySelector('.cart-list')
 
 // State
 
@@ -39,8 +39,19 @@ const closeModal = (modal) => {
 const renderCart = () => {
     if (cart.length === 0) {
         cartEmpty.classList.remove('hidden')
+        cartList.innerHTML = ''
     } else {
         cartEmpty.classList.add('hidden')
+
+        const cartItems = cart.map(item => {
+            return `<li class="cart-item">
+                        <img class="cart-item-image" src="${item.src}" alt="${item.name}">
+                        <p class="cart-item-name">${item.name}</p>
+                        <p class="cart-item-price">R$ ${item.price}</p>
+                    </li>`
+        }).join('')
+
+        cartList.innerHTML = cartItems
     }
 
     openModal(cartModal)
